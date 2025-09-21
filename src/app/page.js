@@ -3,10 +3,11 @@ import Image from 'next/image';
 import HeroSection from './components/HeroSection';
 import Navbar from './components/Navbar';
 import About from './components/About';
+import WorkExperience from './components/WorkExperience';
 import ProjectsSection from './components/ProjectSection';
 import EmailSection from './components/EmailSection';
 import Footer from './components/Footer';
-import AchievementsSection from './components/AchievementsSection';
+
 
 export default function Home() {
   return (
@@ -20,8 +21,9 @@ export default function Home() {
       <Navbar />
       <div className='container mx-auto px-12 py-4 mt-24'>
         <HeroSection />
-        <AchievementsSection/>
+        
         <About/>
+        <WorkExperience/>
         <ProjectsSection/>
         <EmailSection/>
         <Footer/>

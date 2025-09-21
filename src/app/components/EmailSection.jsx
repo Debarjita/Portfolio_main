@@ -42,89 +42,142 @@ const EmailSection = () => {
   return (
     <section
       id="contact"
-      className="grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative"
+      className="py-20 relative"
     >
+      {/* Background gradient */}
       <div className="bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2"></div>
-      <div className="z-10">
-        <h5 className="text-xl font-bold text-white my-2">
-          Let&apos;s Connect
-        </h5>
-        <p className="text-[#ADB7BE] mb-4 max-w-md">
-          {" "}
-          I&apos;m currently looking for new opportunities, my inbox is always
-          open. Whether you have a question or just want to say hi, I&apos;ll
-          try my best to get back to you!
-        </p>
-        <div className="socials flex flex-row gap-2">
-          <Link href="https://github.com/Sourabh-Gor">
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link href="https://www.linkedin.com/in/sourabh-j-gor-72a71321a/">
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
-      </div>
-      <div>
-        {emailSubmitted ? (
-          <p className="text-green-500 text-sm mt-2">
-            Email sent successfully!
+      
+      <div className="container mx-auto px-4 max-w-6xl z-10 relative">
+        {/* Big heading like About Me */}
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold text-white mb-8">Let&apos;s Connect</h2>
+          <p className="text-xl lg:text-2xl text-[#ADB7BE] mb-8 leading-relaxed max-w-3xl mx-auto">
+            I&apos;m actively seeking Software Engineer / SDE opportunities, where I can leverage my technical expertise 
+            and leadership experience to build impactful, scalable solutions. Whether you have a question, want to 
+            discuss opportunities, or just want to say hi, I&apos;ll try my best to get back to you!
           </p>
-        ) : (
-          <form className="flex flex-col" onSubmit={handleSubmit}>
-            <div className="mb-6">
-              <label
-                htmlFor="email"
-                className="text-white block mb-2 text-sm font-medium"
-              >
-                Your email
-              </label>
-              <input
-                name="email"
-                type="email"
-                id="email"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="jacob@google.com"
-              />
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left side - Contact info */}
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl font-bold text-white mb-6">Get In Touch</h3>
+              <div className="space-y-4">
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">📧</span>
+                  </div>
+                  <div>
+                    <p className="text-lg font-medium text-white">Email</p>
+                    <p className="text-[#ADB7BE]">debar.bhatt10@gmail.com</p>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-4">
+                  <div className="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center">
+                    <span className="text-2xl">📍</span>
+                  </div>
+                  <div>
+                    <p className="text-lg font-medium text-white">Location</p>
+                    <p className="text-[#ADB7BE]">Vellore, Tamil Nadu, India</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="subject"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Subject
-              </label>
-              <input
-                name="subject"
-                type="text"
-                id="subject"
-                required
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Just saying hi"
-              />
+
+            {/* Social links */}
+            <div>
+              <h4 className="text-xl font-bold text-white mb-4">Follow Me</h4>
+              <div className="flex space-x-4">
+                <Link 
+                  href="https://github.com/Debarjita"
+                  className="w-12 h-12 bg-[#181818] border border-[#33353F] rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors"
+                >
+                  <Image src={GithubIcon} alt="Github Icon" width={24} height={24} />
+                </Link>
+                <Link 
+                  href="http://www.linkedin.com/in/debarjitabhattacharjee"
+                  className="w-12 h-12 bg-[#181818] border border-[#33353F] rounded-lg flex items-center justify-center hover:border-purple-500/50 transition-colors"
+                >
+                  <Image src={LinkedinIcon} alt="Linkedin Icon" width={24} height={24} />
+                </Link>
+              </div>
             </div>
-            <div className="mb-6">
-              <label
-                htmlFor="message"
-                className="text-white block text-sm mb-2 font-medium"
-              >
-                Message
-              </label>
-              <textarea
-                name="message"
-                id="message"
-                className="bg-[#18191E] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-                placeholder="Let's talk about..."
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-purple-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-            >
-              Send Message
-            </button>
-          </form>
-        )}
+          </div>
+
+          {/* Right side - Contact form */}
+          <div className="bg-[#181818] border border-[#33353F] rounded-xl p-8">
+            {emailSubmitted ? (
+              <div className="text-center py-12">
+                <div className="text-6xl mb-4">✅</div>
+                <h3 className="text-2xl font-bold text-white mb-2">Message Sent Successfully!</h3>
+                <p className="text-green-500 text-lg">
+                  Thank you for reaching out. I&aposll get back to you soon!
+                </p>
+              </div>
+            ) : (
+              <form className="space-y-6" onSubmit={handleSubmit}>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className="text-white block mb-3 text-lg font-medium"
+                  >
+                    Your Email
+                  </label>
+                  <input
+                    name="email"
+                    type="email"
+                    id="email"
+                    required
+                    className="bg-[#121212] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-lg rounded-lg block w-full p-4 focus:border-purple-500 focus:outline-none transition-colors"
+                    placeholder="your.email@example.com"
+                    suppressHydrationWarning
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="subject"
+                    className="text-white block text-lg mb-3 font-medium"
+                  >
+                    Subject
+                  </label>
+                  <input
+                    name="subject"
+                    type="text"
+                    id="subject"
+                    required
+                    className="bg-[#121212] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-lg rounded-lg block w-full p-4 focus:border-purple-500 focus:outline-none transition-colors"
+                    placeholder="What&apos;s this about?"
+                    suppressHydrationWarning
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="message"
+                    className="text-white block text-lg mb-3 font-medium"
+                  >
+                    Message
+                  </label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="6"
+                    required
+                    className="bg-[#121212] border border-[#33353F] placeholder-[#9CA2A9] text-gray-100 text-lg rounded-lg block w-full p-4 focus:border-purple-500 focus:outline-none transition-colors resize-none"
+                    placeholder="Tell me about your project, opportunity, or just say hello..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white font-bold py-4 px-8 rounded-lg w-full text-lg transition-all duration-300 transform hover:scale-105"
+                  suppressHydrationWarning
+                >
+                  Send Message
+                </button>
+              </form>
+            )}
+          </div>
+        </div>
       </div>
     </section>
   );
